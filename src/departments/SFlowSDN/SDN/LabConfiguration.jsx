@@ -10,7 +10,29 @@ const LabConfiguration = () => (
     <h3>Configuration Relating to the HP 2920-24G network switch</h3>
     <p>TODO: this should be updated after explaining what Openflow/SDN does.</p>
     <h4>Flow Tables</h4>
-    <p>By default (our current configuration), there are three flow tables within each HP 2920-24G network switch. There is &quot;Table 0&quot;, which only contains a single, match-all flow that forwards packets to &quot;Table 100&quot;. Without a controller connected, Table 100 does not have any default flows in it. So when the controller isn&apos;t connected to the switch, any packet that tries to use the switch will first go to Table 0, then will be forwarded to Table 100, then it will be dropped as there are no flows within Table 100. Table 100 is known as the &quot;hardware table&quot; as the switching done within the table is handled in hardware. There is also &quot;Table 200&quot;, the &quot;software&quot; table, as the switching within the table is handled in software. The hardware table, Table 100, has much faster switching speeds, with pings being able to go through the hardware table in less than 1ms, as opposed to around 125ms in the software table. As such, using Table 100 is preferred. There is downside to using the hardware table, as not all possible match criteria is able to be used in hardware. See the &quot;Supported Matching Criteria&quot; section below. </p>
+    <p>By default (our current configuration), there are three flow tables within each HP 2920-24G network switch.</p>
+    <p>The three tables are as follows:</p>
+    <h5>Table 0</h5>
+    <ul>
+      <li>Contains a single, match-all flow that forwards packets to &quot;Table 100&quot;.</li>
+      <li>The table that Table 0 forwards to is configurable within the switch&apos;s configuration.</li>
+      <li>The HP 2920-24G network switch does not allow other flows to be added to Table 0. (It took me a literal month to figure this one out...)</li>
+    </ul>
+    <h5>Table 100</h5>
+    <ul>
+      <li>This is known as the &quot;hardware table&quot; as the switching within the table is handled in hardware.</li>
+      <li>As such, network traffic is able to be switched at ping latency of less than 1 ms.</li>
+      <li>However, the downside of using this flow table is that not all possible match criteria is able to be used in hardware. See the &quot;Supported Matching Criteria&quot; section below.</li>
+      <li>By default, contains no flows, as such, if any packet is forwarded to a table without any flows, the packet will be dropped</li>
+      <li>This will be the flow table that our controller will add flows to.</li>
+    </ul>
+    <h5>Table 200</h5>
+    <ul>
+      <li>This is known as the &quot;software table&quot; as the switching within the table is handled in software inside the switch.</li>
+      <li>As such, network traffic is switched slower than the hardware table, at ping latency of around 125 ms.</li>
+      <li>Although this speed is extremely slow, the upside of using the software table as there are more possible match criteria than in the hardware table. However, the vastly decreased speeds negate this benefit.</li>
+      <li>By default, contains no flows, as such, if any packet is forwarded to a table without any flows, the packet will be dropped.</li>
+    </ul>
     <h4>Supported Matching Criteria</h4>
     <h4>TODO: add a table for actions we have tested that our switches don&apos;t support.</h4>
   </Container>
