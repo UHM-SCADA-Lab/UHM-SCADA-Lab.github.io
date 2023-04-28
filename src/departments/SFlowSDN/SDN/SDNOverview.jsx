@@ -17,15 +17,36 @@ const SDNOverview = () => (
     <p>A Controller is simply a program that has methods to interact with an OpenFlow-enabled network switch through the use of the OpenFlow protocol.<sup>1</sup> A Controller can add flows to flow tables of the switch, it can delete flows in the flow tables of the switch, and much more, however we are mainly interested in being able to add and delete these flows. Here are the basic steps of how our controller interacts with a network switch:</p>
     <ol>
       <li>If OpenFlow and the Controller are both enabled in the switch<sup>1</sup>, the controller and switch will be able to complete a handshake, which will essentially create a session between the two devices.<sup>2</sup></li>
-      <li>As part of this initial handshake, the Controller will add a flow into the switch&apos;s flow table 100, which will have match every single and will forward the packet to the controller.<sup>3</sup> If a packet is sent through this flow, the resulting message is known as a &quot;flow request&quot;</li>
+      <li>As part of this initial handshake, the Controller will add a flow into the switch&apos;s flow table 100, which will have match every single packet and will forward the packet to the controller.<sup>3</sup> If a packet is sent through this flow, the resulting message is known as a &quot;flow request&quot;.</li>
       <li>Once this connection is established, there will be echo messages sent for the remainder of the connection, between the controller and the switch to ensure the connection is healthy.</li>
-      <li>Handling flow requests...</li>
+      <li>Once the switch receives a network packet from a device, the packet will be sent to Table 0 of the switch&apos;s flow tables. From there, it will follow the following steps:</li>
+      <ol>
+        <li>In Table 0, it will match to the only flow in the table that will send the packet to Table 100.</li>
+        <li>In Table 100, it will match to the only flow currently in the flow table, which will send the packet to the controller as a flow request.</li>
+        <li>In the controller, the packet will be appear as a &quot;Packet In Event&quot;, and a method will be called to handle the event.</li>
+        <li>In the &quot;Packet In Handler&quot;, this event will parse the packet associated with the flow request then use the parsed information to determine if a flow should be added. If the controller determines a flow shouldn&apos;t be added, then the packet is dropped.<sup>4</sup></li>
+        <li>If a flow is determined to be added, the controller will send an &quot;OpenFlow Flow Mod&quot; to the network switch with instructions to add a flow. There will be additional information in this Flow Mod Request, such as:</li>
+        <ul>
+          <li>Match criteria, that the created flow will use to match packets to it.</li>
+          <li>A priority, that determines which flows the packets will try and match to first. Newly added flows should have a higher priority than that of the match-all flow from the switch to the controller.</li>
+          <li>The flow table to put the created flow into. See the &quot;Lab Configuration&quot; for more information.</li>
+          <li>Timeouts for the flow, that determine when (or if) a flow should be auto-removed from the switch. There is a hard timeout, which will remove the flow no matter what after the specified time has passed, and there is a soft timeout, which will remove the flow if a packet hasn&apos;t used the flow within the specified time. A timeout of 0 seconds specifies no timeout for the flow.</li>
+          <li>Actions, that tell the switch where a packet should be forwarded if the packet is matched to the flow.</li>
+          <li>There are other possible parameters as well, however these are the only ones we have experimented with.</li>
+        </ul>
+        <li>The original packet that triggered the flow request will then be sent back out by the controller to it&apos;s destination.<sup>5</sup></li>
+      </ol>
+      <li>The controller will then keep repeating this process of handling flow requests indefinitely, see the &quot;Lab Configuration&quot; tab for a more detailed step by step guide of how our specific controller is configured.</li>
     </ol>
     <sup>1</sup> There is some configuration needed in the network switch to achieve this - see Network department.
     <br />
     <sup>2</sup> The config option &quot;max-backoff-interval 1&quot; in the switch modifies the delay at which this connection will happen. For testing purposes, it is currently set that every 1 second the switch will try to connect to the controller.
     <br />
     <sup>3</sup> We also send a message to the switch to delete all flows within Table 100 before adding the flow to the controller.
+    <br />
+    <sup>4</sup> Eventually, we would like to do more when a packet is to be dropped, like sending a message to a human network monitor or adding a flow in the switch to auto-drop that type of packet.
+    <br />
+    <sup>5</sup> This last step is true for our HP 2920-24G network switch, however, some switches will have a queue system and will only send a copy of the packet to the controller, which would require a different last step.
     <br /><br />
     <h4>References</h4>
     <p>[1] C. Craven, “What Is OpenFlow? Definition and How it Relates to SDN,” sdxcentral, Aug. 25, 2013. <Link to="https://www.sdxcentral.com/networking/sdn/definitions/what-the-definition-of-software-defined-networking-sdn/what-is-openflow/">https://www.sdxcentral.com/networking/sdn/definitions/what-the-definition-of-software-defined-networking-sdn/what-is-openflow/</Link> (accessed Apr. 26, 2023).</p>
