@@ -35,6 +35,7 @@ const SDNOverview = () => (
           <li>There are other possible parameters as well, however these are the only ones we have experimented with.</li>
         </ul>
         <li>The original packet that triggered the flow request will then be sent back out by the controller to it&apos;s destination.<sup>5</sup></li>
+        <li>The next time a matching packet is encountered by the switch, it should match to the new flow in the flow table and be forwarded direct to it&apos;s destination, avoiding the process of going to the controller.</li>
       </ol>
       <li>The controller will then keep repeating this process of handling flow requests indefinitely, see the &quot;Lab Configuration&quot; tab for a more detailed step by step guide of how our specific controller is configured.</li>
     </ol>
