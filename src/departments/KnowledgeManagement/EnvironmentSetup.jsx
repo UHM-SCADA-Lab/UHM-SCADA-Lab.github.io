@@ -35,7 +35,7 @@ const EnvironmentSetup = () => (
       </ul>
       <h5><li>Open the Repo in IntelliJ IDEA</li></h5>
       <ul>
-        <li>Click &quot;Open in IntelliJ&quot;</li>
+        <li>Click &quot;Open in IntelliJ&quot;.</li>
         <img className="pt-2" src="/images/KnowledgeManagement/OpenRepo.png" alt="Open Repo" style={{ maxWidth: '500px' }} />
       </ul>
       <h5><li>Run &quot;npm install&quot;</li></h5>
