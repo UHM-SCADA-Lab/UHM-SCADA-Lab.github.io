@@ -4,6 +4,7 @@ import Prerequisites from './Prerequisites';
 import EnvironmentSetup from './EnvironmentSetup';
 import Overview from './Overview';
 import WhyReact from './React';
+import Guides from './Guides';
 
 const KnowledgeManagement = () => (
   <Container className="py-3">
@@ -18,7 +19,10 @@ const KnowledgeManagement = () => (
       <Tab eventKey="environmentSetup" title="Environment Setup" className="py-4">
         <EnvironmentSetup />
       </Tab>
-      <Tab eventKey="whyReact" title="React" className="py-4">
+      <Tab eventKey="guides" title="Guides" className="py-4">
+        <Guides />
+      </Tab>
+      <Tab eventKey="whyReact" title="Website History" className="py-4">
         <WhyReact />
       </Tab>
     </Tabs>

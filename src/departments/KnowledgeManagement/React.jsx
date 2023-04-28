@@ -3,7 +3,7 @@ import { Figure } from 'react-bootstrap';
 
 const WhyReact = () => (
   <span>
-    <h3>Converting our website from HTML/CSS to React</h3>
+    <h3>Why do we use React?</h3>
     <p>The SCADA Lab website is the primary source of documentation for the entire class and our individual teams. In previous semesters, this documentation was maintained on the class’s Laulima site via the Wiki tool. Although this method was fairly straightforward, the website had a very simplistic visual appearance because we could only utilize Markdown, which is limited in scope. We ultimately wanted more room for customization and a website we could navigate to instead of having to log in to Laulima every time.</p>
     <img src="/images/KnowledgeManagement/laulima.PNG" alt="Laulima SCADA website" style={{ maxWidth: '600px' }} />
     <p className="pt-3">This led our previous Knowledge Management lead to build a website from the ground up utilizing HTML/CSS. It was completed toward the end of the Fall 2022 semester. While this was an arduous process, it resulted in a more visually appealing website with an improved navigational structure. We utilized this iteration of our website for the remainder of the Fall 2022 semester and for a portion of the Spring 2023 semester.</p>
