@@ -7,7 +7,7 @@ const Overview = () => (
     <h3>Welcome</h3>
     <Row>
       <Col md={8}>
-        <p>The System Administration department is responsible for managing and maintaining the overall health, stability, and security of the SCADA network. This includes system configuration and maintenance for all Raspberry PIs and the Windows server, user account management, backup and disaster recovery, regular system updates, performance tuning, troubleshooting and issue resolution, documentation and reporting, system planning, and system improvement.</p>
+        <p>The System Administration department is responsible for managing and maintaining the overall health, stability, and security of the SCADA network. This includes system configuration and maintenance for all Raspberry Pis and the Windows server, user account management, backup and disaster recovery, regular system updates, performance tuning, troubleshooting and issue resolution, documentation and reporting, system planning, and system improvement.</p>
       </Col>
       <Col md={4}>
         <img src="/images/SystemAdmin/Overview_Server_Room.jpg" alt="Server Room" style={{ maxWidth: '80%' }} />
