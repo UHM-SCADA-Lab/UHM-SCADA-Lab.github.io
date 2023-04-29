@@ -14,7 +14,7 @@ const Overview = () => (
     <img src="/images/Database/PhaseZero.png" alt="Phase Zero" style={{ maxWidth: '400px' }} />
     <b>&#x2192;</b>
     <img src="/images/Database/PhaseTwo.png" alt="Phase Two" style={{ maxWidth: '400px' }} />
-    <h4>ElasticSearc Helpful Links</h4>
+    <h4>ElasticSearch Helpful Links</h4>
     <Row>
       <Col>
         <ul>
