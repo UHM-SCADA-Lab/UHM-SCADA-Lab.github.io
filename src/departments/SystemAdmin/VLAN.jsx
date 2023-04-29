@@ -4,13 +4,14 @@ import { Container } from 'react-bootstrap';
 
 const VLAN = () => (
   <span>
+    <h3>What are VLANS</h3>
+    <p>VLANS are important to our lab. It gives us the ability to control and restrict which devices can communicate with each other. The reason the Pi’s are grouped to a specific VLAN is because we want the Pi we are working with to be in the same network as the devices that it needs to communicate with. By separating the Pi&apos;s into their own VLAN, we can ensure that their traffic is isolated from other devices on the network.</p>
+    <p>VLANs are Virtual Local Area Networks which are subnets (Independent Broadcast Domains). In this lab, we have four VLAN. Eventually the ports will communicate with each other by tagging traffic.  The first VLAN is the general VLAN which is where most of our Pi&apos;s are connected to, the second is the SDN controller, the third is the SEL[3] (Schweitzer Engineering Laboratories), and the fourth is the security VLAN.</p>
     <Container>
+      <h3>Prerequisites</h3>
       <ul>
-        <li>Prerequisites</li>
-        <ul>
-          <li>Switch must be configured to allow multiple VLANs on the ethernet port the RPi is using</li>
-          <li>When making changes to the files make sure to sudo vi</li>
-        </ul>
+        <li>Switch must be configured to allow multiple VLANs on the ethernet port the RPi is using</li>
+        <li>When making changes to the files make sure to sudo vi</li>
       </ul>
       <h3>MultiHoming Steps</h3>
       <ol>
