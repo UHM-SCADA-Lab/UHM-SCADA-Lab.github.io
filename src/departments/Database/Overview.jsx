@@ -22,7 +22,7 @@ const Overview = () => (
           <li><Link to="https://www.elastic.co/guide/en/elasticsearch/reference/current/settings.html">Elasticsearch Configurations</Link></li>
           <li><Link to="https://www.youtube.com/watch?v=wisXOgaTEU8">Real Time Python Log ingestion with Logstash & ELK | Demo (Video)</Link></li>
           <li><Link to="https://pypi.org/project/python-logstash/">Python logging handler for Logstash</Link></li>
-          <li><Link to="https://www.youtube.com/watch?v=G2TUmPZ1slw&list=PLVx1qovxj-amb-8M_3Ccdl1eczvbJzkwT&index=10">Creating a basic pipline (video)</Link></li>
+          <li><Link to="https://www.youtube.com/watch?v=G2TUmPZ1slw&list=PLVx1qovxj-amb-8M_3Ccdl1eczvbJzkwT&index=10">Creating a basic pipeline (video)</Link></li>
         </ul>
       </Col>
     </Row>
