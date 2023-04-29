@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 const LabConfiguration = () => (
   <Container className="py-3">
+    <h2>Lab Configuration</h2>
     <h3>Concise Changes</h3>
     <ul>
       <li>The SDN controller needs to push flows to the hardware flow table, Table 100.</li>

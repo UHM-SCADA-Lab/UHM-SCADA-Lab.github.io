@@ -5,7 +5,7 @@ import RYUNotes from './RYUNotes';
 
 const LegacyControllerResearch = () => (
   <Container className="py-3">
-    <h3>Legacy Controller Research</h3>
+    <h2>Legacy Controller Research</h2>
     <p> At the start of the Spring 2022 semester, everyone in the lab was assigned an SDN controller framework from the list on <Link to="https://en.wikipedia.org/wiki/List_of_SDN_controller_software">this wikipedia article</Link>. There were some basic criteria to guide our decision, such as:</p>
     <ul>
       <li>Is written in Python, or a programming language that is easy to read, easy to use, and is already known by mostly everyone in the lab.</li>
