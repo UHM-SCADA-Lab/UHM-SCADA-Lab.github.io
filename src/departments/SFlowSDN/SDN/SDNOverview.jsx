@@ -29,7 +29,7 @@ const SDNOverview = () => (
         <ul>
           <li>Match criteria, that the created flow will use to match packets to it.</li>
           <li>A priority, that determines which flows the packets will try and match to first. Newly added flows should have a higher priority than that of the match-all flow from the switch to the controller.</li>
-          <li>The flow table to put the created flow into. See the &quot;Lab Configuration&quot; for more information.</li>
+          <li>The flow table to put the created flow into. See the &quot;Lab Configuration&quot; tab for more information.</li>
           <li>Timeouts for the flow, that determine when (or if) a flow should be auto-removed from the switch. There is a hard timeout, which will remove the flow no matter what after the specified time has passed, and there is a soft timeout, which will remove the flow if a packet hasn&apos;t used the flow within the specified time. A timeout of 0 seconds specifies no timeout for the flow.</li>
           <li>Actions, that tell the switch where a packet should be forwarded if the packet is matched to the flow.</li>
           <li>There are other possible parameters as well, however these are the only ones we have experimented with.</li>
@@ -37,7 +37,7 @@ const SDNOverview = () => (
         <li>The original packet that triggered the flow request will then be sent back out by the controller to it&apos;s destination.<sup>5</sup></li>
         <li>The next time a matching packet is encountered by the switch, it should match to the new flow in the flow table and be forwarded direct to it&apos;s destination, avoiding the process of going to the controller.</li>
       </ol>
-      <li>The controller will then keep repeating this process of handling flow requests indefinitely, see the &quot;Lab Configuration&quot; tab for a more detailed step by step guide of how our specific controller is configured.</li>
+      <li>The controller will then keep repeating this process of handling flow requests indefinitely, see the &quot;Step By Step Process Inside the Switch&quot; tab for a more detailed step by step guide of how our specific controller is configured.</li>
     </ol>
     <sup>1</sup> There is some configuration needed in the network switch to achieve this - see Network department.
     <br />

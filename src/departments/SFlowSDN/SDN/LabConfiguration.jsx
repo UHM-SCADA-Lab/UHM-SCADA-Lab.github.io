@@ -4,10 +4,6 @@ import { Link } from 'react-router-dom';
 
 const LabConfiguration = () => (
   <Container className="py-3">
-    <h2>Lab Configuration</h2>
-    <h3>Step By Step Decision Making Inside the Switch</h3>
-    <p>TODO: Should go into the steps our switch does more in depth than the steps in SDN Overview</p>
-    <p>Want to use specific event names from within the OS-Ken source code.</p>
     <h3>Concise Changes</h3>
     <ul>
       <li>The SDN controller needs to push flows to the hardware flow table, Table 100.</li>
@@ -110,7 +106,7 @@ const LabConfiguration = () => (
         <tr> <td>OFPP_ANY           </td> <td>Not used in packet forwarding. Used as a wildcard in certain messages to the switch. </td> <td>Yes                     </td> </tr>
       </tbody>
     </Table>
-    <sup>1</sup> Table adapted from <Link to="https://github.com/openstack/os-ken/blob/dcd0d1a1eeb12fe7de64b3c3a7e1f8f64d86e37e/os_ken/ofproto/ofproto_v1_3.py">OS-Ken&apos;s source code</Link> and <Link to="https://osrg.github.io/ryu-book/en/html/openflow_protocol.html">RYU&apos;s documentation</Link>.<br />
+    <sup>1</sup> Table adapted from <Link to="https://github.com/openstack/os-ken/blob/dcd0d1a1eeb12fe7de64b3c3a7e1f8f64d86e37e/os_ken/ofproto/ofproto_v1_3.py">OS-Ken&apos;s source code</Link> and <Link to="https://osrg.github.io/ryu-book/en/html/openflow_protocol.html">RYU&apos;s documentation</Link>, whether or not the switch supports the OpenFlow port was found experimentally.<br />
   </Container>
 );
 
