@@ -18,7 +18,7 @@ import SNMPNOC from './departments/SNMPNOC';
 import SFlowSDN from './departments/SFlowSDN/SFlowSDN';
 import MLCurriculum from './departments/MLCurriculum/MLCurriculum';
 import HCI from './departments/HCI';
-import Database from './departments/Database';
+import Database from './departments/Database/Database';
 import RedTeamSEL from './departments/RedTeamSEL/RedTeamSEL';
 import LogStash from './departments/LogStash';
 import Legacy from './pages/Legacy';
