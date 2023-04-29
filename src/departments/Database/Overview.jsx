@@ -10,7 +10,7 @@ const Overview = () => (
     <p><b>Logstash</b>: Transforms and filters data, then sends it to Elasticsearch for storage</p>
     <p><b>Kibana</b>: An analytical engine that visualizes the data stored in elastic search. It can also be used as a GUI for monitoring and managing the database.</p>
     <h4>Purpose of the database</h4>
-    <p>The main purpose of the data based is to transition the SCADA lab into risk based access. The Diagrams below illustrate the transition. </p>
+    <p>The main purpose of the database is to transition the SCADA lab into risk based access. The Diagrams below illustrate the transition. </p>
     <img src="/images/Database/PhaseZero.png" alt="Phase Zero" style={{ maxWidth: '400px' }} />
     <b>&#x2192;</b>
     <img src="/images/Database/PhaseTwo.png" alt="Phase Two" style={{ maxWidth: '400px' }} />
