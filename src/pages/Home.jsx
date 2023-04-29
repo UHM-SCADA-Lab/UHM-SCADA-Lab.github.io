@@ -80,11 +80,11 @@ const Home = () => (
             </tr>
             <tr>
               <td><Link to="/hci">HCI</Link></td>
-              <td>Under Construction</td>
+              <td>Create and maintain multiple human computer interfaces to enable stronger control over and awareness of the SCADA lab status.</td>
             </tr>
             <tr>
               <td><Link to="/database">Database</Link></td>
-              <td>Under Construction</td>
+              <td>Create and maintain an elaseticsearch database that stores and organizes monitoring data from the SCADA lab.</td>
             </tr>
             <tr>
               <td><Link to="/redTeam-SEL">Red Team/SEL</Link></td>
@@ -92,7 +92,7 @@ const Home = () => (
             </tr>
             <tr>
               <td><Link to="/logStash">Logstash</Link></td>
-              <td>Under Construction</td>
+              <td>Create pipline&#39;s from data sources (i.e. panic button) to the database.</td>
             </tr>
           </tbody>
         </Table>
