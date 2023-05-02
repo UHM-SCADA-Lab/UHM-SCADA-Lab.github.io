@@ -68,7 +68,7 @@ const SDNOverview = () => (
     </ol>
     <h4>The Specifics</h4>
     <ul>
-      <li>This SDN Overview page is meant to be extremely general. For specific information on how SDN and OpenFlow are used in our physical in-lab setup, see the &quot;Lab Configuration&quot; and &quot;Step By Step Process Inside the Switch&quot; tabs.</li>
+      <li>This SDN Overview page is meant to be extremely general. For specific information on how SDN and OpenFlow are used in our physical in-lab setup, see the &quot;Lab Configuration&quot; and &quot;Step By Step SDN Operation&quot; tabs.</li>
       <li>See the &quot;Current SDN Controller&quot; tab for information about the SDN framework we are using with information on how to program and run a controller using the framework.</li>
       <li>See the &quot;Legacy Controller Research&quot; tab for information about our research into which SDN framework to use.</li>
       <li>See the &quot;SDN Resources&quot; tab for additional resources relating to OpenFlow and SDN.</li>

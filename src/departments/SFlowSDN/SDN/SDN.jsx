@@ -5,7 +5,7 @@ import CurrentController from './CurrentController';
 import LabConfiguration from './LabConfiguration';
 import SDNOverview from './SDNOverview';
 import SDNResources from './SDNResources';
-import ForwardingSteps from './ForwardingSteps';
+import StepByStepSDN from './StepByStepSDN';
 
 const SDN = () => (
   <Container className="py-3">
@@ -18,8 +18,8 @@ const SDN = () => (
       <Tab eventKey="labConfiguartion" title="Lab Configuration" className="py-4">
         <LabConfiguration />
       </Tab>
-      <Tab eventKey="forwardingSteps" title="Step By Step Process Inside the Switch" className="py-4">
-        <ForwardingSteps />
+      <Tab eventKey="stepByStepSDN" title="Step By Step SDN Operation" className="py-4">
+        <StepByStepSDN />
       </Tab>
       <Tab eventKey="currentController" title="Current SDN Controller" className="py-4">
         <CurrentController />

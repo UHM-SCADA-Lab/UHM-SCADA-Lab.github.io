@@ -13,6 +13,7 @@ const SDNResources = () => (
       <li><Link to="https://en.wikipedia.org/wiki/Software-defined_networking">SDN Explanation</Link></li>
       <li><Link to="https://opennetworking.org/">Open Networking Explanation</Link></li>
       <li><Link to="https://en.wikipedia.org/wiki/List_of_SDN_controller_software">List of SDN Platforms</Link></li>
+      <li><Link to="https://opennetworking.org/wp-content/uploads/2014/10/openflow-spec-v1.3.0.pdf">OpenFlow Specification</Link></li>
     </ul>
   </Container>
 );
