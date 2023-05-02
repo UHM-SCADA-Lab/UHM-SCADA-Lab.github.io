@@ -5,7 +5,7 @@ const NavBar = () => (
   <Navbar style={{ zIndex: 10 }} className="fixed-top w-100" bg="light" expand="lg">
     <Container>
       <Navbar.Brand href="/">
-        <img src="/images/Logos/SCADA.png" alt="SCADA" style={{ height: '60px' }} />
+        <img src="/images/Logos/SCADA.png" alt="SCADA" style={{ height: '60px', width: 'auto' }} />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
