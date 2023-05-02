@@ -29,7 +29,7 @@ const NavBar = () => (
             <NavDropdown.Item href="/#/systemAdmin">System Admin</NavDropdown.Item>
             <NavDropdown.Item href="/#/knowledgeManagement">Knowledge Management</NavDropdown.Item>
             <NavDropdown.Item href="/#/snmp-noc">SNMP/NOC</NavDropdown.Item>
-            <NavDropdown.Item href="/#/sFlow-SDN">sFlow/SDN</NavDropdown.Item>
+            <NavDropdown.Item href="/#/sFlow-SDN">sFlow & SDN</NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Header><strong>Research</strong></NavDropdown.Header>
             <NavDropdown.Item href="/#/mlCurriculum">ML Curriculum</NavDropdown.Item>

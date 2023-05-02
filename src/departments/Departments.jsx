@@ -14,7 +14,7 @@ const Departments = () => (
       </Col>
       <Col className="text-center py-4">
         <Link to="/systemAdmin">
-          <img src="/images/" alt="System Admin Department" />
+          <img src="/images/Departments/SystemAdmin.jpg" alt="System Admin Department" />
           <h1><Badge bg="secondary">System Admin</Badge></h1>
         </Link>
       </Col>
@@ -22,13 +22,13 @@ const Departments = () => (
     <Row>
       <Col className="text-center py-4">
         <Link to="/knowledgeManagement">
-          <img src="/images/Departments/KnowledgeManagement.png" alt="Knowledge Management Department" />
+          <img src="/images/Departments/KnowledgeManagement.jpg" alt="Knowledge Management Department" />
           <h1><Badge bg="secondary">Knowledge Management</Badge></h1>
         </Link>
       </Col>
       <Col className="text-center py-4">
         <Link to="/snmp-noc">
-          <img src="/images/" alt="SNMP/NOC Department" />
+          <img src="/images/Departments/snmp-noc.jpg" alt="SNMP/NOC Department" />
           <h1><Badge bg="secondary">SNMP/NOC</Badge></h1>
         </Link>
       </Col>
@@ -36,8 +36,8 @@ const Departments = () => (
     <Row>
       <Col className="text-center py-4">
         <Link to="/sFlow-SDN">
-          <img src="/images/Departments/SFlow-SDN.png" alt="sFlow/SDN Department" />
-          <h1><Badge bg="secondary">sFlow/SDN</Badge></h1>
+          <img src="/images/Departments/SFlow-SDN.jpg" alt="sFlow & SDN Department" />
+          <h1><Badge bg="secondary">sFlow & SDN</Badge></h1>
         </Link>
       </Col>
     </Row>
@@ -51,7 +51,7 @@ const Departments = () => (
       </Col>
       <Col className="text-center py-4">
         <Link to="/hci">
-          <img src="/images/" alt="HCI Department" />
+          <img src="/images/Departments/HCI.jpg" alt="HCI Department" />
           <h1><Badge bg="secondary">HCI</Badge></h1>
         </Link>
       </Col>
@@ -59,7 +59,7 @@ const Departments = () => (
     <Row>
       <Col className="text-center py-4">
         <Link to="/database">
-          <img src="/images/" alt="Database Department" />
+          <img src="/images/Departments/Database.png" alt="Database Department" />
           <h1><Badge bg="secondary">Database</Badge></h1>
         </Link>
       </Col>
@@ -73,7 +73,7 @@ const Departments = () => (
     <Row>
       <Col className="text-center py-4">
         <Link to="/logStash">
-          <img src="/images/" alt="Logstash Department" />
+          <img src="/images/Departments/Logstash.png" alt="Logstash Department" />
           <h1><Badge bg="secondary">Logstash</Badge></h1>
         </Link>
       </Col>
