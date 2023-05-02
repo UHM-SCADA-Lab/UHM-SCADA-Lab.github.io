@@ -36,7 +36,7 @@ const Departments = () => (
     <Row>
       <Col className="text-center py-4">
         <Link to="/sFlow-SDN">
-          <img src="/images/Departments/SFlow-SDN.jpg" alt="sFlow & SDN Department" />
+          <img src="/images/Departments/Sflow-SDN.jpg" alt="sFlow & SDN Department" />
           <h1><Badge bg="secondary">sFlow & SDN</Badge></h1>
         </Link>
       </Col>
