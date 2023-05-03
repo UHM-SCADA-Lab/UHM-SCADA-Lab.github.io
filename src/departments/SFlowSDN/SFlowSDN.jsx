@@ -5,7 +5,7 @@ import SFlow from './SFlow/SFlow';
 
 const SFlowSDN = () => (
   <Container className="py-3">
-    <h1>sFlow/SDN</h1>
+    <h1>sFlow & SDN</h1>
     <Tabs defaultActiveKey="sFlow">
       <Tab eventKey="sFlow" title="sFlow" className="py-4">
         <SFlow />
