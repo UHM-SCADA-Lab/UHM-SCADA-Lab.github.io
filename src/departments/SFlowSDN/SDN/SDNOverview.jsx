@@ -1,6 +1,9 @@
 import React from 'react';
-import { Container, Table } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import OverviewFlowTable from './Tables/OverviewFlowTable';
+import OverviewFlowTableCase1 from './Tables/OverviewFlowTableCase1';
+import OverviewFlowTableCase2 from './Tables/OverviewFlowTableCase2';
 
 const SDNOverview = () => (
   <Container className="py-3">
@@ -12,36 +15,12 @@ const SDNOverview = () => (
     <p><sup>1</sup> Information from <Link to="https://www.sdxcentral.com/networking/sdn/definitions/what-the-definition-of-software-defined-networking-sdn/what-is-openflow/">https://www.sdxcentral.com/networking/sdn/definitions/what-the-definition-of-software-defined-networking-sdn/what-is-openflow/</Link>.</p>
     <h4>What is a Flow?</h4>
     <p>A flow is an entry in a flow table. It contains information about which fields of a network packet to &quot;match&quot; to and actions to take if a packet successfully matches to the flow. A flow can also have a priority that will determine the order a packet will try to match to flow table entries. A flow can have a match field of a MAC address and an action of where to forward the packet to. For example, if a flow table is as follows:</p>
-    <Table striped bordered responsive="xl">
-      <thead>
-        <tr> <th width="125">Flow Priority </th> <th width="500">Match Criteria </th> <th>Action Output </th> </tr>
-      </thead>
-      <tbody>
-        <tr> <td>1             </td> <td>Source MAC address: &quot;b8:27:eb:3c:2d:60&quot; </td> <td>Forward to the physical port number &quot;4&quot; </td> </tr>
-        <tr> <td>0             </td> <td>Match all                                         </td> <td>Forward to the SDN Controller                     </td> </tr>
-      </tbody>
-    </Table>
+    <OverviewFlowTable />
     <p>As such, if a packet with a source MAC address of &quot;b8:27:eb:b5:37:bf&quot; is sent to this flow table, the following process will happen:</p>
-    <Table striped bordered responsive="xl">
-      <thead>
-        <tr> <th width="125">Flow Priority </th> <th width="350">Match Criteria </th> <th width="150">Is matched to? </th> <th>Action Applied </th> </tr>
-      </thead>
-      <tbody>
-        <tr> <td>1            </td> <td>Source MAC address: &quot;b8:27:eb:3c:2d:60&quot; </td> <td>No             </td> <td>N/A                                             </td> </tr>
-        <tr> <td>0            </td> <td>Match all                                         </td> <td>Yes            </td> <td>Forwarded to the SDN Controller                 </td> </tr>
-      </tbody>
-    </Table>
+    <OverviewFlowTableCase1 />
     <p>That is, the packet will try to match to the flow with the highest priority (the priority &quot;1&quot; flow in the table), but since it has a different source MAC address than the match field of the flow, the flow&apos;s action will not be applied to the packet. Then the packet will try to match to the flow with the next highest priority (the priority &quot;0&quot; flow in the table), and since that flow is match-all, the packet will have the flow&apos;s action applied to it, forwarding the packet to the SDN controller.</p>
     <p>However, if a packet with a source MAC address of &quot;b8:27:eb:3c:2d:60&quot; is sent to this flow table, the following process will happen:</p>
-    <Table striped bordered responsive="xl">
-      <thead>
-        <tr> <th width="125">Flow Priority </th> <th width="350">Match Criteria </th> <th width="150">Is matched to? </th> <th>Action Applied </th> </tr>
-      </thead>
-      <tbody>
-        <tr> <td>1            </td> <td>Source MAC address: &quot;b8:27:eb:3c:2d:60&quot; </td> <td>Yes          </td> <td>Forwarded to the physical port number &quot;4&quot; </td> </tr>
-        <tr> <td>0            </td> <td>Match all                                         </td> <td>N/A          </td> <td>N/A                                                 </td> </tr>
-      </tbody>
-    </Table>
+    <OverviewFlowTableCase2 />
     <p>That is, the packet will try to match to the flow with the highest priority (the priority &quot;1&quot; flow in the table), and since it has the same source MAC address than the match field of the flow, the packet will have the flow&apos;s action applied to it, forwarding the packet to the physical port number &quot;4&quot;. Since the packet has already been forwarded out of the flow table, the other flows in the flow table will not be attempted to match to.</p>
     <h4>What is a Controller?</h4>
     <p>A Controller is simply a program that has methods to interact with an OpenFlow-enabled network switch through the use of the OpenFlow protocol. A Controller, through the use of the OpenFlow protocol, has many methods that interact with a network switch. However, we are mainly interested in being able to add and delete flows to the network switch&apos;s flow table. Here are the basic steps of how a controller interacts with a network switch:</p>
