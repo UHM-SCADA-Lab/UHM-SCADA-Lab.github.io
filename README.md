@@ -1,1 +1,1 @@
-UH Manoa SCADA Lab
+UH Manoa SCADA Lab's class website
