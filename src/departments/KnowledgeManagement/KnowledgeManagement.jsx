@@ -3,8 +3,8 @@ import { Container, Tab, Tabs } from 'react-bootstrap';
 import Prerequisites from './Prerequisites';
 import EnvironmentSetup from './EnvironmentSetup';
 import Overview from './Overview';
-import WhyReact from './React';
 import Guides from './Guides';
+import WebsiteHistory from './WebsiteHistory';
 
 const KnowledgeManagement = () => (
   <Container className="py-3">
@@ -22,8 +22,8 @@ const KnowledgeManagement = () => (
       <Tab eventKey="guides" title="Guides" className="py-4">
         <Guides />
       </Tab>
-      <Tab eventKey="whyReact" title="Website History" className="py-4">
-        <WhyReact />
+      <Tab eventKey="websiteHistory" title="Website History" className="py-4">
+        <WebsiteHistory />
       </Tab>
     </Tabs>
   </Container>
