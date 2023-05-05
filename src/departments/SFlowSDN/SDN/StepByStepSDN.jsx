@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Handshake from './Tables/StepByStepSDN/Handshake';
 import OpenFlowEnabled from './Tables/StepByStepSDN/OpenFlowEnabled';
 import HandshakeFlowTables from './Tables/StepByStepSDN/HandshakeFlowTables';
+import OperationFlowTable0 from './Tables/StepByStepSDN/OperationFlowTable0';
 
 const StepByStepSDN = () => (
   <Container className="py-3">
@@ -30,6 +31,11 @@ const StepByStepSDN = () => (
       <Handshake />
       <li>[Switch] The network switch will process the two <Link to="https://docs.openstack.org/os-ken/latest/ofproto_v1_3_ref.html#modify-state-messages">OFPFlowMod</Link> messages and the flow tables will be as follows:</li>
       <HandshakeFlowTables />
+    </ol>
+    <h4>Normal Operation</h4>
+    <ol>
+      <li>[Switch] Now, each time the network switch receives a network packet, the packet will be sent to <b>Flow Table 0</b>. In <b>Flow Table 0</b>, the following decision will be made:</li>
+      <OperationFlowTable0 />
     </ol>
     <p>
       <br /><sup>1</sup> Both HP 2920-24G network switches have the OpenFlow configuration &quot;max-backoff-interval 1&quot;, which specifies that each switch will try to reconnect to the controller every 1 second. It is set this low for testing.
