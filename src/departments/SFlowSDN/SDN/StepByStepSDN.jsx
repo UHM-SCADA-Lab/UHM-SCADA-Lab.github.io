@@ -1,7 +1,8 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import StepByStepHandshakeTable from './Tables/StepByStepHandshakeTable';
+import StepByStepHandshakeTable from './Tables/StepByStepSDN/Handshake';
+import OpenFlowEnabled from './Tables/StepByStepSDN/OpenFlowEnabled';
 
 const StepByStepSDN = () => (
   <Container className="py-3">
@@ -13,10 +14,14 @@ const StepByStepSDN = () => (
       <li>Steps prefaced with &quot;[Control]&quot; are handled by our controller program.</li>
       <li>Steps prefaced with &quot;[Switch]&quot; are handled by the HP 2920-24G network switch.</li>
     </ul>
+    <h4>OpenFlow Enabled</h4>
+    <ol>
+      <li>[Switch] Once OpenFlow and the Controller and enabled inside the network switch&apos;s configuration, the network switch will create the following base flow tables and flows:</li>
+      <OpenFlowEnabled />
+    </ol>
     <h4>The Handshake</h4>
     <ol>
       <li>[os-ken] The network switch and the controller will exchange <Link to="https://docs.openstack.org/os-ken/latest/ofproto_v1_3_ref.html#hello">OFPHello</Link> messages which is the initial request for a session to start.<sup>1</sup></li>
-      <li>[Switch] The network switch will </li>
       <li>[os-ken] For the remainder of the session, <Link to="https://docs.openstack.org/os-ken/latest/ofproto_v1_3_ref.html#echo-request">OFPEchoRequest</Link> and <Link to="https://docs.openstack.org/os-ken/latest/ofproto_v1_3_ref.html#echo-reply">OFPEchoReply</Link> messages will be exchanged between the network switch and the controller. These are used to ensure the session is healthy.</li>
       <li>[os-ken] Once the session is established, the controller will send the switch an <Link to="https://docs.openstack.org/os-ken/latest/ofproto_v1_3_ref.html#handshake">OFPFeaturesRequest</Link> message.</li>
       <li>[Control] The switch will reply with an <Link to="https://docs.openstack.org/os-ken/latest/ofproto_v1_3_ref.html#handshake">OFPSwitchFeatures</Link> message. Our controller receives this event and will create and send two <Link to="https://docs.openstack.org/os-ken/latest/ofproto_v1_3_ref.html#modify-state-messages">OFPFlowMod</Link> messages to the switch. The first OFPFlowMod message will delete all flows inside the network switch&apos;s flow table Table 100, and the second will add a flow in Table 100 that will have a match-all match criteria and an action output of forwarding to the OpenFlow port <Link to="https://github.com/openstack/os-ken/blob/dcd0d1a1eeb12fe7de64b3c3a7e1f8f64d86e37e/os_ken/ofproto/ofproto_v1_3.py#L107">OFPP_Controller</Link>. Specifically the two flow requests will have the following fields:<sup>2</sup></li>

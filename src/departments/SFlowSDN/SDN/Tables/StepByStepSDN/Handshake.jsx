@@ -43,7 +43,6 @@ const StepByStepSDNHandshakeTable = () => (
         <td>match-all<sup>4</sup></td>
         <td>OFPP_CONTROLLER<sup>3,6</sup></td>
       </tr>
-      <tr> </tr>
     </tbody>
   </Table>
 );

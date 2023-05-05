@@ -1,9 +1,9 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import OverviewFlowTable from './Tables/OverviewFlowTable';
-import OverviewFlowTableCase1 from './Tables/OverviewFlowTableCase1';
-import OverviewFlowTableCase2 from './Tables/OverviewFlowTableCase2';
+import OverviewFlowTable from './Tables/SDNOverview/OverviewFlowTable';
+import OverviewFlowTableCase1 from './Tables/SDNOverview/OverviewFlowTableCase1';
+import OverviewFlowTableCase2 from './Tables/SDNOverview/OverviewFlowTableCase2';
 
 const SDNOverview = () => (
   <Container className="py-3">
