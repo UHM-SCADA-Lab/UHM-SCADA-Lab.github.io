@@ -7,6 +7,7 @@ import VLAN from './VLAN';
 import Miscellaneous from './Miscellaneous';
 import WindowsServer from './WindowsServer';
 import Debian from './Debian';
+import WavLink from './WavLink';
 import GitHubTutorial from './GitHubTutorial';
 import Legacy from './Legacy';
 
@@ -28,6 +29,9 @@ const SystemAdmin = () => (
       </Tab>
       <Tab eventKey="WindowsServer" title="Windows Server" className="py-4">
         <WindowsServer />
+      </Tab>
+      <Tab eventKey="WavLink" title="WavLink" className="py-4">
+        <WavLink />
       </Tab>
       <Tab eventKey="Debian" title="Debian" className="py-4">
         <Debian />
