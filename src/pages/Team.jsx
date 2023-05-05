@@ -51,7 +51,7 @@ const Team = () => {
           <h3>Operations</h3>
         </Col>
         <Col>
-          <h5 className="text-end">Director: John</h5>
+          <h5 className="text-end">Operations Manager: John</h5>
         </Col>
       </Row>
       <Table striped bordered responsive="xl">
@@ -77,7 +77,7 @@ const Team = () => {
           <h3>Research</h3>
         </Col>
         <Col>
-          <h5 className="text-end">Director: Justin</h5>
+          <h5 className="text-end">Director of Research: Justin</h5>
         </Col>
       </Row>
       <Table striped bordered responsive="xl">
