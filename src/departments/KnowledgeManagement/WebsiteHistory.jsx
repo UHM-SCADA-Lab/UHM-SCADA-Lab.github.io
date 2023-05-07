@@ -1,7 +1,7 @@
 import React from 'react';
 import { Figure } from 'react-bootstrap';
 
-const WhyReact = () => (
+const WebsiteHistory = () => (
   <span>
     <h3>Why do we use React?</h3>
     <p>The SCADA Lab website is the primary source of documentation for the entire class and our individual teams. In previous semesters, this documentation was maintained on the class’s Laulima site via the Wiki tool. Although this method was fairly straightforward, the website had a very simplistic visual appearance because we could only utilize Markdown, which is limited in scope. We ultimately wanted more room for customization and a website we could navigate to instead of having to log in to Laulima every time.</p>
@@ -22,4 +22,4 @@ const WhyReact = () => (
   </span>
 );
 
-export default WhyReact;
+export default WebsiteHistory;
