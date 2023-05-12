@@ -5,6 +5,7 @@ import Handshake from './Tables/StepByStepSDN/Handshake';
 import OpenFlowEnabled from './Tables/StepByStepSDN/OpenFlowEnabled';
 import HandshakeFlowTables from './Tables/StepByStepSDN/HandshakeFlowTables';
 import OperationFlowTable0 from './Tables/StepByStepSDN/OperationFlowTable0';
+import OperationFlowTable100 from './Tables/StepByStepSDN/OperationFlowTable100';
 
 const StepByStepSDN = () => (
   <Container className="py-3">
@@ -36,6 +37,8 @@ const StepByStepSDN = () => (
     <ol>
       <li>[Switch] Now, each time the network switch receives a network packet, the packet will be sent to <b>Flow Table 0</b>. In <b>Flow Table 0</b>, the following decision will be made:</li>
       <OperationFlowTable0 />
+      <li>[Switch] As such, the packet will be forwarded to <b>Flow Table 100</b>, where the following decision will be made:</li>
+      <OperationFlowTable100 />
     </ol>
     <p>
       <br /><sup>1</sup> Both HP 2920-24G network switches have the OpenFlow configuration &quot;max-backoff-interval 1&quot;, which specifies that each switch will try to reconnect to the controller every 1 second. It is set this low for testing.
