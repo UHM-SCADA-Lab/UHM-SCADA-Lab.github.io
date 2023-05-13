@@ -11,7 +11,19 @@ const CurrentController = () => (
     <CurrentControllerTable />
     <p>RYU has some example programs located on <Link to="https://github.com/faucetsdn/ryu/tree/master/ryu/app">GitHub</Link>, which are great stubs for building a custom controller of our own. We initially based our programs on <Link to="https://github.com/faucetsdn/ryu/blob/master/ryu/app/simple_switch_13.py">simple_switch_13.py</Link>, which needs some slight modification to work with our physical switches in the lab. These RYU programs can work with os-ken, you will just need to rename imported methods from &quot;RYU&quot; to &quot;OS-Ken&quot;. See the &quot;Lab Configuration&quot; tab for controller configuration changes that are needed to interact with the HP 2920-24G network switches we use in the lab.</p>
     <h4>Launching OS-Ken</h4>
-    <p>TODO: copy from RYUNotes.jsx</p>
+    You can launch os-ken through the command line with the command &quot;osken-manager&quot;, to see os-ken&apos;s help usage, run:
+    <p className="fw-lighter">
+      $ osken-manager -h
+    </p>
+    To run the controller we have built:
+    <p className="fw-lighter">
+      $ osken-manager ~/SDN/controller.py
+    </p>
+    Where the &quot;~/SDN/controller.py&quot; is the current location of the controller python file, but this should be updated if the controller is moved or if you would like to use a different controller. <br /> <br />
+    This is optional, but typically, we are running the controller with a verbose argument as follows:
+    <p className="fw-lighter">
+      $ osken-manager --verbose ~/SDN/controller.py
+    </p>
     <h4>Programming OS-Ken</h4>
     <p>TODO: copy from RYUNotes.jsx</p>
     <p>TODO: determine how in depth I want this to be</p>

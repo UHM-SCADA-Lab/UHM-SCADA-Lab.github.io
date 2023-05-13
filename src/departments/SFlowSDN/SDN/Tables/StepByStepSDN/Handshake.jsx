@@ -2,7 +2,7 @@ import React from 'react';
 import { Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const StepByStepSDNHandshakeTable = () => (
+const Handshake = () => (
   <Table striped bordered responsive="xl">
     <thead>
       <tr>
@@ -43,9 +43,8 @@ const StepByStepSDNHandshakeTable = () => (
         <td>match-all<sup>4</sup></td>
         <td>OFPP_CONTROLLER<sup>3,6</sup></td>
       </tr>
-      <tr> </tr>
     </tbody>
   </Table>
 );
 
-export default StepByStepSDNHandshakeTable;
+export default Handshake;
