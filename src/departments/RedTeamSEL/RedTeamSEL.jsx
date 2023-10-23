@@ -1,6 +1,5 @@
 import React from 'react';
 import { Col, Container, Row, Tab, Table, Tabs } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import Overview from './Overview';
 import SEL451Config from './SEL451Config';
 import SEL311BConfig from './SEL311BConfig';
@@ -25,19 +24,19 @@ const RedTeamSEL = () => (
           <tbody>
             <tr>
               <td>RTAC SEL-3505</td>
-              <td><Link to="https://laulima.hawaii.edu/access/content/group/MAN.XLSEEX96mn.202310/Manuals/RTAC%20SEL-3505/RTA%20SEL-3505%20Manual.pdf">Manual</Link></td>
+              <td><a href="/pdfs/SEL3505-Manual.pdf" target="_blank" rel="noreferrer">Manual</a></td>
             </tr>
             <tr>
               <td>SEL-451</td>
-              <td><Link to="https://laulima.hawaii.edu/access/content/group/MAN.XLSEEX96mn.202310/Manuals/SEL%20-%20451/SEL%20-%20451%20Factory%20Reset/sel451%20manual.pdf">Manual</Link></td>
+              <td><a href="/pdfs/SEL451-Manual.pdf" target="_blank" rel="noreferrer">Manual</a></td>
             </tr>
             <tr>
               <td>SEL 311B</td>
-              <td><Link to="https://laulima.hawaii.edu/access/content/group/MAN.XLSEEX96mn.202310/Manuals/SEL-311%20B/311B%20Instruction%20Manual.pdf">Manual</Link></td>
+              <td><td><a href="/pdfs/SEL311B-Manual.pdf" target="_blank" rel="noreferrer">Manual</a></td></td>
             </tr>
             <tr>
               <td>DL 205</td>
-              <td><Link to="https://laulima.hawaii.edu/access/content/group/MAN.XLSEEX96mn.202310/Manuals/Direct%20Logic%20205%20Koyo/DL205%20Manual.pdf">Manual</Link></td>
+              <td><td><a href="/pdfs/DL205-Manual.pdf" target="_blank" rel="noreferrer">Manual</a></td></td>
             </tr>
           </tbody>
         </Table>
